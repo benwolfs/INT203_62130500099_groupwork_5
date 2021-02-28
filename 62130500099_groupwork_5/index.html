@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <link href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link href="/tailwind.css" rel="stylesheet">
+
+</head>
+
+<body id="app" class="bg-indigo-100">
+
+
+
+  <div class="text-center item-center">
+
+    <p class="text-8xl text-center pt-10 pb-16 font-serif">Photo gallery ({{numPic}})</p>
+    <div class="space-y-5">
+
+      <search-box :pics= "pics" @search-pic = "search"></search-box>
+      <photo-items :pics= "pics" :search-pic = "searchPic"></photo-items>
+      
+    </div>
+
+    <div class="mt-20 text-2xl font-bold"v-if="searchPic.length == 0">
+      --No Photo--
+    </div>
+
+  </div>
+
+  <footer class="bg-indigo-100 h-5"></footer>
+
+  <script src="./main.js"></script>
+  <script src="./components/photoSearch.js"></script>
+  <script src="./components/photoItem.js"></script>
+  <script src="./components/photoView.js"></script>
+
+  <script>var mountedApp = app.mount('#app')</script>
+
+</body>
+
+</html>
